@@ -4,8 +4,10 @@
 body {
     font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;
     font-size:14px;
-    margin:0;
+    margin-left:250px;
+    margin-right: 250px;
     padding:0;
+    width: 990px;           /* durch diese Einstellung wird auch der Footer definiert, da sich dieser noch im Body befindet */
 }
 
 .logo {
@@ -30,8 +32,10 @@ body {
 
 .stripe {
     background-color:#337ab7;
-    width:100%;
+    width:200%;
     height:15px;
+    margin-left: -250px;
+
 
 }
 
@@ -43,13 +47,78 @@ body {
 }
 
 footer {
-    background-color:#f8f9fa;
+    background-color:#337ab7;      /* #f8f9fa ursprünglicher Farbwert verändert, damit man es besser sehen kann */
     height: 150px;
     padding-top:20px;
+    width: 200%;
+    margin-left: -250px;
+    padding-left: 250px;
 }
 
 
+nav {
 
+    background:white;
+    font-weight:bold;   /* fett gedruckt */
+    margin-left: -20px ; /* damit Überschrfit an gleicher Stelle wie Our, würde man hier 0 wählen würde sich das Feld allgemein ("Rahmen") an Rand anordnen  */
+    left:0;             /* damit keine Verschiebung ist */
+    top:109px;          /* für die Position genau über der blauen Linie */
+    z-index:1000;       /* hoch, weil Überdeckung gefragt */
+}
+
+nav ul, nav li{
+    display:inline-block;
+    list-style:none;    /* Entfernen der Aufzählungszeichen */
+    padding:0;          /* damit kein Abstand */
+    margin:0;           /* damit kein Abstand */
+}
+
+
+nav > ul > li {
+    position:relative; /* damit die Untermenüs an der richtigen Position sind */
+    font-size: 16px;
+}
+nav > ul > li:hover {
+    background:white;
+}
+nav a {
+    text-decoration:none;   /* Entfernung Hyperlink-Formatierung */
+    color:#337ab7;
+}
+nav ul > li > ul {
+    display:none;        /* damit Untermenü nicht standardmäßig da ist */
+    position:absolute;  /* damit Untermenü beim Aufklappen richtig angezeigt wird */
+    background:white;
+    font-size: 13px;
+
+}
+nav ul > li:hover > ul {
+    display:block;      /*damit Untermenü generell angezeigt wird */
+
+
+}
+
+nav ul > li a {
+    padding:10px 20px;  /* Definition, wie groß die einzelnen Menüfeldern mit Text sein sollen */
+    display:block;
+    white-space:nowrap; /* Behandlung des Whitespace -- Umbrüche kollabieren, Leerzeichen + Tabs kollabieren, kein automatischer Umbruch */
+}
+
+nav ul > li > ul > li {
+    display:block;      /* damit Untermenü von About us korrekt ausgefüllt wird */
+
+}
+nav ul > li > ul > li:hover {
+    background:#337ab7;
+}
+
+nav a:hover{        /* ich weiß, dass dadurch auch die Links der ersten Ebene betroffen sind, ich habe es nicht geschafft, den Selektor zu wählen, dass dem nicht so ist
+                      mein ansatz war nav a ? ul>li>ul>li:hover wobei egal was ich beim ? einsetzte (+, >, ~, etc.) nicht das richtige herauskam
+                      ich hab die ul und li in diversen Kombinationen probiert, aber keine war richtig. Ich verstehe generell nicht, warum mein erster ansatz nicht funktioniert,
+                      weil ich den Hintergrund ja auch so geregelt habe...
+                    */
+    color: white;
+}
 
 
 
